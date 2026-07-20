@@ -1,0 +1,40 @@
+button {
+    width: 100px;
+    height: 100px;
+    border-color: black;
+    background-color: blueviolet;
+
+
+}
+
+.display {
+    width: 400px;
+    height: 40px;
+    background: lime;
+    text-emphasis-color: white;
+    font-size: large;
+    text-decoration: dotted;
+}
+
+.calculator {
+    background-color: aliceblue;
+    border-color: black;
+    height: 50vh;
+    width: 50vh;
+    padding-left: 50px;
+    padding-top: 20px;
+    align-items: center;
+    font-size: large;
+
+}
+
+h1 {
+    text-align: center;
+    text-decoration: aqua;
+}
+
+
+
+.func {
+    background-color: yellow;
+}

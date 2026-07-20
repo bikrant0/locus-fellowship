@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #f2f2f2;
+        }
+
+        h1 {
+            margin-top: 30px;
+        }
+
+        .calculator {
+            width: 300px;
+            margin: auto;
+            background: #222;
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .display {
+            width: 90%;
+            height: 50px;
+            font-size: 25px;
+            text-align: right;
+            margin-bottom: 15px;
+            padding: 10px;
+        }
+
+        button {
+            width: 60px;
+            height: 50px;
+            margin: 5px;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+
+        .func {
+            background: orange;
+            color: white;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <h1>Calculator</h1>
+
+
+    <div class="calculator">
+
+        <input type="text" id="display" class="display" readonly>
+
+
+        <div>
+
+            <button onclick="Click(7)">7</button>
+            <button onclick="Click(8)">8</button>
+            <button onclick="Click(9)">9</button>
+            <button class="func" onclick="setOperator('+')">+</button>
+
+
+            <button onclick="Click(4)">4</button>
+            <button onclick="Click(5)">5</button>
+            <button onclick="Click(6)">6</button>
+            <button class="func" onclick="setOperator('-')">-</button>
+
+
+            <button onclick="Click(1)">1</button>
+            <button onclick="Click(2)">2</button>
+            <button onclick="Click(3)">3</button>
+            <button class="func" onclick="setOperator('*')">*</button>
+
+
+            <button class="func" onclick="clearDisplay()">AC</button>
+            <button onclick="Click(0)">0</button>
+            <button onclick="Click('00')">00</button>
+            <button class="func" onclick="calculate()">=</button>
+
+
+        </div>
+
+    </div>
+
+
+
+    <script>
+
+        // Calculator memory
+        let firstNumber = "";
+        let operator = "";
+        let calculationDone = false;
+
+
+        // Display connection
+        const display = document.getElementById("display");
+
+
+        // Number button
+        function Click(value) {
+
+            if (calculationDone) {
+                display.value = "";
+                calculationDone = false;
+            }
+
+            display.value += value;
+        }
+
+
+
+        // Operator button
+        function setOperator(op) {
+
+            firstNumber = display.value;
+            operator = op;
+
+            display.value = "";
+
+        }
+
+
+
+        // Calculation
+        function calculate() {
+
+            let secondNumber = "";
+
+            let result;
+
+
+            if (operator === "+") {
+
+                result = Number(firstNumber) + Number(secondNumber);
+
+            }
+            else if (operator === "-") {
+
+                result = Number(firstNumber) - Number(secondNumber);
+
+            }
+            else if (operator === "*") {
+
+                result = Number(firstNumber) * Number(secondNumber);
+
+            }
+            else {
+
+                result = "Error";
+
+            }
+
+
+            display.value = result;
+
+
+            firstNumber = display.value;
+            operator = "";
+            calculationDone = true;
+
+        }
+
+
+
+        // Clear button
+        function clearDisplay() {
+
+
+
+            firstNumber = display.value;
+            operator = op;
+            display.value = "";
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
